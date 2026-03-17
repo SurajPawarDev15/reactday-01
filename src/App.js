@@ -32,6 +32,19 @@ function App() {
   useEffect(() => {
     console.log("case3: Component render only one time");
   }, [counter]);
+
+  //cleanup using useEffect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter((prev) => prev + 1);
+    }, 1000);
+
+    // Cleanup function
+    return () => {
+      clearInterval(interval);
+      console.log("Timer Clean Up");
+    };
+  }, []);
   return (
     <>
       <h1>Hello React Welcome to Learning</h1>

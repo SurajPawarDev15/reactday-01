@@ -1,3 +1,5 @@
+import { Post } from "./Post";
+
 function Welcome({ greeting, members, students }) {
   const channelName = "ThinkCreateShareGrow";
   const isDisplay = false;
@@ -32,6 +34,7 @@ function Welcome({ greeting, members, students }) {
             <p>Student Grade: {student.grade}</p>
           </div>
         ))}
+        <Post></Post>
       </div>
     </div>
   );
