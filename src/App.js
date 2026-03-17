@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Welcome from "./Welcome";
 
 function App() {
@@ -17,6 +17,21 @@ function App() {
     members: members,
     students: students,
   };
+
+  // useEffect | firstcase : without dependency
+  useEffect(() => {
+    console.log("case1: Component Mounted");
+  });
+
+  // useEffect | secondcase : empty dependency
+  useEffect(() => {
+    console.log("case2: Component render only one time");
+  }, []);
+
+  // useEffect | thirdcase : dependency
+  useEffect(() => {
+    console.log("case3: Component render only one time");
+  }, [counter]);
   return (
     <>
       <h1>Hello React Welcome to Learning</h1>

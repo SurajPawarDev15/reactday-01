@@ -2,7 +2,7 @@ function Welcome({ greeting, members, students }) {
   const channelName = "ThinkCreateShareGrow";
   const isDisplay = false;
 
-  console.log(members);
+  // console.log(members);
 
   return (
     <div>
