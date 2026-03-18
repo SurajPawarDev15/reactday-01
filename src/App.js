@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Welcome from "./Welcome";
+import { UserContext } from "./context/UserContext";
+import Parent from "./componenets/Parent";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -45,9 +47,15 @@ function App() {
       console.log("Timer Clean Up");
     };
   }, []);
+
+  const user = "Suraj";
+
   return (
     <>
       <h1>Hello React Welcome to Learning</h1>
+      <UserContext.Provider value={user}>
+        <Parent />
+      </UserContext.Provider>
       <Welcome {...welcomeData}></Welcome>
       <div>
         <h3>Counter Value :{counter}</h3>
